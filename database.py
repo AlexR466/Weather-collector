@@ -1,40 +1,13 @@
-import psycopg2
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 from config import (
-    DB_HOST, DB_NAME, DB_PASS, DB_PORT, DB_USER, PARAMETRES
+    DB_HOST, DB_NAME, DB_PASS, DB_USER
 )
 
-connection = psycopg2.connect(
-    host=DB_HOST,
-    database=DB_NAME,
-    user=DB_USER,
-    password=DB_PASS,
-    port=DB_PORT
-)
 
-cursor = connection.cursor()
+database_url = f'postgresql://{DB_USER}:{DB_PASS}@{DB_HOST}/{DB_NAME}'
 
-cursor.execute(
-    """CREATE TABLE IF NOT EXISTS cities
-    (
-        city_id INT PRIMARY KEY,
-        name VARCHAR(32) NOT NULL
-    );
-    """
-)
-cursor.execute(
-    f"""CREATE TABLE IF NOT EXISTS weather
-    (
-        id INT PRIMARY KEY,
-        city_id INT,
-        {PARAMETRES.replace(' ', ' INT, ') + ' INT,'}
-        created_at TIMESTAMP,
-        FOREIGN KEY (city_id) REFERENCES cities(city_id)
-    );
-    """
-)
-connection.commit()
+engine = create_engine(database_url)
 
-
-cursor.close()
-connection.close()
+Session = sessionmaker(bind=engine)
