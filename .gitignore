@@ -150,4 +150,4 @@ media/
 
 pip/
 
-alembic/versions
+alembic/versions/
