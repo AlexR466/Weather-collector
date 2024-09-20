@@ -10,5 +10,6 @@ services:
   app:
     build:
       context: ./app
+    env_file: .env
     depends_on:
       - db

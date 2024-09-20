@@ -8,7 +8,7 @@ RUN pip install -r requirements.txt --no-cache-dir
 
 COPY . .
 
-RUN api alembic revision --autogenerate -m "First migration"
+RUN alembic revision --autogenerate -m "First migration"
 
 RUN alembic upgrade head
 

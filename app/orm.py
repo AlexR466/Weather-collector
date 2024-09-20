@@ -6,9 +6,10 @@ from models import City, Weather
 def insert_cities(cities: list[str]) -> None:
     """Добавление городов в таблицу Cities."""
     list_of_city_objects = []
-    for city in cities:
-        list_of_city_objects.append(City(city_name=city))
     with Session() as db:
+        for city in cities:
+            if not db.query(City).filter(City.city_name == city).first():
+                list_of_city_objects.append(City(city_name=city))
         db.add_all(list_of_city_objects)
         db.commit()
 
