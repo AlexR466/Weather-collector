@@ -30,8 +30,8 @@ URL = 'https://api.weather.yandex.ru/graphql/query'
 
 load_dotenv()
 API_KEY = os.environ.get('API_KEY')
-DB_HOST = os.environ.get('DB_HOST')
-DB_PORT = os.environ.get('DB_PORT')
-DB_USER = os.environ.get('DB_USER')
-DB_PASS = os.environ.get('DB_PASS')
-DB_NAME = os.environ.get('DB_NAME')
+POSTGRES_HOST = os.environ.get('POSTGRES_HOST')
+POSTGRES_PORT = os.environ.get('POSTGRES_PORT')
+POSTGRES_USER = os.environ.get('POSTGRES_USER')
+POSTGRES_PASS = os.environ.get('POSTGRES_PASS')
+POSTGRES_NAME = os.environ.get('POSTGRES_NAME')
