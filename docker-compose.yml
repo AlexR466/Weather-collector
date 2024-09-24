@@ -6,10 +6,24 @@ services:
     env_file: .env
     ports:
       - "5432:5432"
+    networks:
+      - my-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: "10s"
+      timeout: "5s"
+      retries: 5
+      start_period: "30s"
 
   app:
     build:
       context: ./app
     env_file: .env
+    command: bash -c "alembic revision --autogenerate -m 'initial' && alembic upgrade head && python main.py"
     depends_on:
       - db
+    networks:
+      - my-network
+    restart: on-failure
+networks:
+  my-network:
