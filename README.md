@@ -28,7 +28,7 @@ gitPOSTGRES_PASSWORD=your_password
 
 ## Техно-стек:
 При разработке использовались:
-1. Язык программирования для бэкенда - [Python](https://docs.python.org/3/),
+1. Язык программирования - [Python](https://docs.python.org/3/),
 2. База данных [Posgresql](https://www.postgresql.org/docs/),
 3. Библиотека для работы с базой данных - [SQLAlchemy](https://docs.sqlalchemy.org/en/20/),
 4. Инструмент для миграции базы данных - [Alembic](https://alembic.sqlalchemy.org/en/latest/),
