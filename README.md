@@ -15,12 +15,12 @@
 
 ### Заполнить `.env`:
 
-API_KEY= {ключ, полученный на сайте https://yandex.ru/pogoda/b2b/console/api-page}
-POSTGRES_HOST=db
-POSTGRES_PORT=5432
-POSTGRES_DB=your_database_name
-POSTGRES_USER=your_user_name
-POSTGRES_PASSWORD=your_password
+API_KEY= {ключ, полученный на сайте https://yandex.ru/pogoda/b2b/console/api-page}  
+POSTGRES_HOST=db  
+POSTGRES_PORT=5432  
+POSTGRES_DB=your_database_name  
+POSTGRES_USER=your_user_name  
+gitPOSTGRES_PASSWORD=your_password  
 
 ### Запустить компоуз:
 
