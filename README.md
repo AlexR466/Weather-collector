@@ -24,7 +24,7 @@ POSTGRES_HOST=db
 POSTGRES_PORT=5432  
 POSTGRES_DB=your_database_name  
 POSTGRES_USER=your_user_name  
-gitPOSTGRES_PASSWORD=your_password  
+POSTGRES_PASSWORD=your_password  
 
 ### Запустить компоуз:
 
