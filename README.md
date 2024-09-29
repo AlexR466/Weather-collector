@@ -19,7 +19,7 @@
 
 ### Заполнить `.env`:
 
-API_KEY= ключ, полученный на сайте https://yandex.ru/pogoda/b2b/console/api-page 
+API_KEY= ключ, полученный на сайте https://yandex.ru/pogoda/b2b/console/api-page  
 POSTGRES_HOST=db  
 POSTGRES_PORT=5432  
 POSTGRES_DB=your_database_name  
